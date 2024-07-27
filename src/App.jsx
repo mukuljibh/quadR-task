@@ -25,20 +25,20 @@ function App() {
       })
   }, [])
   return (
-    <div className='bg-gray-900 lg:h-screen '>
+    <div className='bg-gray-900 xl:h-screen '>
       <NavBar />
-      <h1 className='text-xl text-gray-500 text-center mb-8'>Best Price to Trade</h1>
+      <h1 className='lg:text-xl text-sm text-gray-500 text-center mb-8'>Best Price to Trade</h1>
       <CoinPriceTimeline />
       <div className='flex lg:text-2xl text-xs justify-around font-bold text-gray-500 mt-12'>
         <p>#</p>
         <p>Name</p>
         <p>Last Traded Price</p>
         <p>Buy / Sell Price</p>
-        <p>Difference</p>
+        <p className='lg:block hidden'>Difference</p>
         <p>savings</p>
       </div>
 
-      <div className=" mt-12 space-y-5 pb-10 overflow-auto  " style={{ maxHeight: "20rem" }}>
+      <div className=" mt-12 space-y-5 pb-10 overflow-auto lg:max-h-72" >
         {assets?.map((asset, id) => {
           return <CrytoCard key={id} index={id} asset={asset} imageSrc={imageLink[id]} />
         })}
